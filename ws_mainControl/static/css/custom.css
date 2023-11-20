@@ -5,3 +5,17 @@
 .main-header .dropdown-menu a {
     color: #fff;
 }
+
+#Date {
+    font-size: 20px !important; 
+    text-align: center;
+}
+
+.clock ul{
+    list-style: none;
+    display: flex;
+    font-size: 30px;
+    gap: 5px;
+    color: white;
+    margin-left: 50px !important;
+} 

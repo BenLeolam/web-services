@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User 
+from datetime import date
 
 class Category(models.Model):
     category_name = models.CharField(max_length=50, unique=True)
@@ -30,6 +31,12 @@ class Blog(models.Model):
     is_featured = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    # current Day and Month
+    today = date.today()
+    d1 = today.strftime("%d")
+    d2 = today.strftime("%b")
+   
 
     def __str_(self):
         return self.title 

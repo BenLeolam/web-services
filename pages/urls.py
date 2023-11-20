@@ -6,11 +6,9 @@ urlpatterns = [
 
     path('about', views.about, name='about.html'),
 
-    path('blog', views.blog, name='blog.html'),
-    path('blog_details', views.blog_details, name='blog_details.html'),
-
     path('login', views.login, name='login.html'), 
     path('register', views.register, name='register'),
+    path('forgot-password', views.forgot_password, name='forgot_password'),
 
     path('coming_soon', views.coming_soon, name='coming_soon' ),
 ]

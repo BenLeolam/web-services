@@ -6,16 +6,12 @@ def home(request):
 def about(request):
     return render(request, 'pages/about.html')
 
-
-def blog(request):
-    return render(request, 'pages/blog.html')
-
-def blog_details(request):
-    return render(request, 'pages/blog_details.html')
-
 def login(request):
     return render(request, 'pages/login.html')
 def register(request):
     return render(request, 'pages/register.html')
+def forgot_password(request):
+    return render(request, 'pages/forgot_password.html')
+
 def coming_soon(request):
     return render(request, 'pages/coming_soon.html')
