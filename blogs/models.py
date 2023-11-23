@@ -25,6 +25,7 @@ class Blog(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE) 
     featured_image = models.ImageField(upload_to='uploads/%Y/%m/%d')
+    avatar_image = models.ImageField(upload_to='uploads/%Y/%m/%d', blank=True )
     short_description = models.TextField(max_length=500)
     body = models.TextField(max_length=2000)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="Draft")
@@ -37,6 +38,6 @@ class Blog(models.Model):
     d1 = today.strftime("%d")
     d2 = today.strftime("%b")
    
-
+    
     def __str_(self):
         return self.title 

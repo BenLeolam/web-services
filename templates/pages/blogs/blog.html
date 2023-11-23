@@ -20,13 +20,60 @@
 <div class="blog-body content-area">
     <div class="container">
         <div class="row">
+
             <div class="col-lg-8 col-md-12">
+                <div class="main-title">
+                    <h1 class="mb-10">Recent Post</h1>
+                    <div class="title-border">
+                        <div class="title-border-inner"></div>
+                        <div class="title-border-inner"></div>
+                        <div class="title-border-inner"></div>
+                        <div class="title-border-inner"></div>
+                        <div class="title-border-inner"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for post in posts %}
+                    <div class="blog-1">
+                        <div class="blog-image">
+                            <img src="{{ post.featured_image.url }}" alt="blog" class="img-fluid w-100">
+                            <div class="date-box">
+                                <span>{{ post.d1}}</span>{{post.d2}}
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <h4>
+                                <a href="blog-details.html">{{post.title}}</a>
+                            </h4>
+                            <div class="post-meta-2 clearfix">
+                                <span><a href="#"><i class="flaticon-user-1"></i></a> {{post.author}}</span>
+                                <span><a href="#"><i class="flaticon-comment"></i></a> 17K</span>
+                                <span><a href="#"><i class="flaticon-calendar"></i></a> 73k</span>
+                            </div>
+                            <p>{{ post.short_description | truncatewords:30}}</p>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+                </div>
+
+                <div class="main-title">
+                    <h1 class="mb-10">Recent Featured Posts</h1>
+                    <div class="title-border">
+                        <div class="title-border-inner"></div>
+                        <div class="title-border-inner"></div>
+                        <div class="title-border-inner"></div>
+                        <div class="title-border-inner"></div>
+                        <div class="title-border-inner"></div>
+                    </div>
+                </div>
                 <div class="row">
                     {% for post in featured_posts %}
+                   
                     <div class="col-lg-6 col-md-6">
                         <div class="blog-1">
                             <div class="blog-image">
-                                <img src="{% static 'img/blog/blog-3.png'%}" alt="blog" class="img-fluid">
+                                <img src="{{ post.featured_image.url }}" alt="blog" class="img-fluid">
                                 <div class="date-box">
                                     <span>{{ post.d1}}</span>{{post.d2}}
                                 </div>
@@ -40,36 +87,38 @@
                                         <li class="user-name">
                                             <strong><a href="#">{{post.author}}</a></strong>
                                         </li>
-                                        <li><a href="#"><i class="flaticon-comment"></i></a></li>
-                                        <li><a href="#" class="disabled"><i class="flaticon-calendar"></i></a>{{post.created_at | timesince}}</li>
+                                        <li><i class="flaticon-calendar"></i>{{post.created_at | timesince}} ago</li><br>
+                                        <li><i class="flaticon-comment"></i>Comments</li>
                                     </ul>
                                 </div>
                                 <h4>
                                     <a href="blog-details.html">{{post.title}}</a>
                                 </h4>
-                                <p>{{ post.short_description}}</p>
+                                <p>{{ post.short_description | truncatewords:10}}</p>
                             </div>
                         </div>
                     </div>
+                  
                     {% endfor %}
                 </div>
-                <!-- Page navigation start -->
-                <div class="pagination-box p-box-2 text-center">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#"><i class="fa fa-angle-left"></i></a>
-                            </li>
-                            <li class="page-item"><a class="page-link active" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="car-list-leftsidebar.html"><i class="fa fa-angle-right"></i></a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+                
+            
+            
             </div>
+
+            
+
+
+
+
+
+
+
+
+
+
+
+            
             <div class="col-lg-4 col-md-12">
                 <div class="sidebar-right">
                     <!-- Search box -->
